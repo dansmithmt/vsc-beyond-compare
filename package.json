@@ -1,25 +1,25 @@
 {
-	"name": "meld-diff",
-	"version": "1.0.5",
-	"displayName": "Meld Diff",
-	"description": "Use meld to compare files or folders from visual studio code directly.",
-	"publisher": "danielroedl",
-	"author": "danielroedl",
+	"name": "beyond-compare-diff",
+	"version": "1.0.0",
+	"displayName": "Beyond Compare",
+	"description": "Use Beyond Compare to compare files or folders from visual studio code directly.",
+	"publisher": "dansmith",
+	"author": "dansmith",
 	"icon": "images/icon.png",
 	"license": "MIT",
 	"repository": {
-        "type": "git",
-		"url": "https://github.com/danielroedl/vsc-meld-diff"
+		"type": "git",
+		"url": "https://github.com/dansmithmt/vsc-beyond-compare"
 	},
 	"keywords": [
 		"Diff",
 		"Compare",
-		"Meld"
+		"Beyond"
 	],
 	"bugs": {
-		"url": "https://github.com/danielroedl/vsc-meld-diff/issues"
+		"url": "https://github.com/dansmithmt/vsc-beyond-compare/issues"
 	},
-	"homepage": "https://github.com/danielroedl/vsc-meld-diff",
+	"homepage": "https://github.com/dansmithmt/vsc-beyond-compare",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
@@ -27,50 +27,62 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:meld-diff.diffVisible",
-		"onCommand:meld-diff.diffCurrentToOtherOpen",
-		"onCommand:meld-diff.diffCurrentToOther",
-		"onCommand:meld-diff.diffFromFileListSelect",
-		"onCommand:meld-diff.diffFromFileList"
+		"onCommand:beyond-compare-diff.diffVisible",
+		"onCommand:beyond-compare-diff.diffCurrentToOtherOpen",
+		"onCommand:beyond-compare-diff.diffCurrentToOther",
+		"onCommand:beyond-compare-diff.diffFromFileListSelect",
+		"onCommand:beyond-compare-diff.diffFromFileList"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "meld-diff.diffVisible",
+				"command": "beyond-compare-diff.diffVisible",
 				"title": "All visible documents (two or three)",
-				"category": "Meld Diff"
+				"category": "Beyond Compare"
 			},
 			{
-				"command": "meld-diff.diffCurrentToOtherOpen",
+				"command": "beyond-compare-diff.diffCurrentToOtherOpen",
 				"title": "Current file to one other open file in editor",
-				"category": "Meld Diff"
+				"category": "Beyond Compare"
 			},
 			{
-				"command": "meld-diff.diffCurrentToOther",
+				"command": "beyond-compare-diff.diffCurrentToOther",
 				"title": "Current file to one other file (not open in editor)",
-				"category": "Meld Diff"
+				"category": "Beyond Compare"
 			},
 			{
-				"command": "meld-diff.diffFromFileListSelect",
-				"title": "Select for meld compare",
-				"category": "Meld Diff"
+				"command": "beyond-compare-diff.diffFromFileListSelect",
+				"title": "Select for Beyond Compare",
+				"category": "Beyond Compare"
 			},
 			{
-				"command": "meld-diff.diffFromFileList",
-				"title": "Compare with selected for meld compare",
-				"category": "Meld Diff"
+				"command": "beyond-compare-diff.diffFromFileList",
+				"title": "Compare with selected for Beyond Compare",
+				"category": "Beyond Compare"
 			}
 		],
 		"menus": {
 			"explorer/context": [
 				{
-					"command": "meld-diff.diffFromFileListSelect",
-					"group": "Meld Diff@1"
+					"command": "beyond-compare-diff.diffFromFileListSelect",
+					"group": "Beyond Compare@1"
 				},
 				{
-					"command": "meld-diff.diffFromFileList",
-					"group": "Meld Diff@2"
+					"command": "beyond-compare-diff.diffFromFileList",
+					"group": "Beyond Compare@2"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "beyond-compare-diff.diffFromFileListSelect",
+					"group": "Beyond Compare@1",
+					"when": "view == itemlog"
+				},
+				{
+					"command": "beyond-compare-diff.diffFromFileList",
+					"group": "Beyond Compare@2",
+					"when": "view == itemlog"
 				}
 			]
 		}
